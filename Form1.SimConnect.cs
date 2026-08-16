@@ -48,6 +48,9 @@ namespace FSCopilot
             public double SIMULATION_RATE;            // 模拟速率 (1=正常, 2=2倍速, 等)
             public double AUTOPILOT_THROTTLE_ARM;     // 自动油门 (1=开启, 0=关闭)
             public double SPOILERS_ARMED;             // 扰流板预位 (1=已预位, 0=未预位)
+            public double PLANE_LATITUDE;             // 飞机纬度 (度)
+            public double PLANE_LONGITUDE;            // 飞机经度 (度)
+            public double PLANE_ALTITUDE;             // 飞机真实海拔高度 (米)，用于 KML 轨迹记录
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -200,6 +203,10 @@ namespace FSCopilot
                 simconnect.AddToDataDefinition(DEFINITIONS.SimDataDef, "SIMULATION RATE", "number", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
                 simconnect.AddToDataDefinition(DEFINITIONS.SimDataDef, "AUTOPILOT THROTTLE ARM", "bool", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
                 simconnect.AddToDataDefinition(DEFINITIONS.SimDataDef, "SPOILERS ARMED", "bool", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
+                // 飞行轨迹记录所需的位置数据（单位与 SimData 字段一一对应）
+                simconnect.AddToDataDefinition(DEFINITIONS.SimDataDef, "PLANE LATITUDE", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
+                simconnect.AddToDataDefinition(DEFINITIONS.SimDataDef, "PLANE LONGITUDE", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
+                simconnect.AddToDataDefinition(DEFINITIONS.SimDataDef, "PLANE ALTITUDE", "meters", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
 
                 simconnect.RegisterDataDefineStruct<SimData>(DEFINITIONS.SimDataDef);
                 // 写入自动驾驶目标高度（feet）

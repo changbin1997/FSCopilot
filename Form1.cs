@@ -136,6 +136,9 @@ namespace FSCopilot
             // 为 checkBox1 添加选中状态变化事件处理，用于动态注册/注销全局快捷键
             checkBox1.CheckedChanged += CheckBox1_CheckedChanged;
 
+            // 为 button8 添加点击事件处理（开始/停止飞行轨迹记录）
+            button8.Click += button8_Click;
+
             // 窗体加载时 checkBox1 已处于选中状态，事件不会因初始赋值而触发，因此需要主动注册一次
             if (checkBox1.Checked)
             {
@@ -375,6 +378,9 @@ namespace FSCopilot
                 // 注销全局快捷键（若已注册）
                 UnregisterGlobalHotkeys();
 
+                // 若正在记录飞行轨迹，先停止记录并保存 KML 文件，避免轨迹丢失
+                SaveFlightTrackIfRecording();
+
                 DisconnectFromSimulator();
 
                 if (speaker != null)
@@ -397,6 +403,9 @@ namespace FSCopilot
         {
             try
             {
+                // 若正在记录飞行轨迹，先停止记录并保存 KML 文件，再重启程序
+                SaveFlightTrackIfRecording();
+
                 System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo();
                 psi.FileName = System.Reflection.Assembly.GetExecutingAssembly().Location;
                 psi.UseShellExecute = true;

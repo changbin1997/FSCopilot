@@ -75,6 +75,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -700,12 +701,23 @@
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(263, 514);
+            this.checkBox1.Location = new System.Drawing.Point(153, 514);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(384, 16);
             this.checkBox1.TabIndex = 28;
             this.checkBox1.Text = "语音播报快捷键（Z：空速，X：海拔高度，C：相对高度，V：航向）";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(15)))));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(545, 504);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(106, 35);
+            this.button8.TabIndex = 29;
+            this.button8.Text = "轨迹记录";
+            this.button8.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -713,6 +725,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
             this.ClientSize = new System.Drawing.Size(784, 556);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
@@ -796,6 +809,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button8;
     }
 }
 

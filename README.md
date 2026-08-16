@@ -16,9 +16,10 @@ Microsoft Flight Simulator 辅助工具，基于 C# + Windows Forms 开发，
 
 | 文件 | 说明 |
 | --- | --- |
-| `Form1.cs` | 主窗体核心：窗体生命周期（加载/关闭）、全局快捷键（Z/X/C/V）、语音播报入口（`Speak`）、语音选择、重启应用，以及全部状态跟踪字段 |
+| `Form1.cs` | 主窗体核心：窗体生命周期（加载/关闭）、全局快捷键（Z/X/C/V）、语音播报入口（`Speak`）、语音选择、重启应用，以及全部状态跟踪字段；关闭或重启前会自动保存正在记录的飞行轨迹 |
 | `Form1.Designer.cs` | 窗体设计器生成的界面布局代码，包含所有控件的初始化（VS2022 自动生成，一般不需要手动修改） |
 | `Form1.SimConnect.cs` | SimConnect 连接层：数据结构与枚举定义（`SimData`、`DEFINITIONS`、`REQUESTS`、`EVENTS`、`GROUPS`）、连接/断开、后台消息循环、自动重连、数据与异常事件处理、`SendSimEvent` |
+| `Form1.FlightTrack.cs` | 飞行轨迹记录：`button8` 开始/停止记录，每 5 秒采样一次经纬度与海拔高度（米），自动去重，停止后生成以日期时间命名的 KML 文件 |
 | `Form1.GPWS.cs` | GPWS 地面迫近警告逻辑：无线电高度播报（含智能重置与冷却）、地面滑行速度提示 |
 | `Form1.AircraftState.cs` | 飞机状态监测：停机刹车、扰流板展开/收起、扰流板预位、襟翼挡位、起落架状态变化播报 |
 | `Form1.Autopilot.cs` | 自动驾驶状态监测：主开关、ALT/HDG/VS/NAV/APR 各模式、模拟速率显示、自动油门状态 |

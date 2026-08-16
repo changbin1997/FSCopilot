@@ -79,6 +79,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form1.FlightTrack.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.GPWS.cs">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Form</SubType>
