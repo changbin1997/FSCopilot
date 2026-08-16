@@ -1,0 +1,21 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio
+.vs/
+
+# User-specific files
+*.user
+*.suo
+
+# Visual Studio cache
+*.userosscache
+*.sln.docstates
+
+# Build logs
+*.log
+
+# NuGet
+packages/
+*.nupkg
